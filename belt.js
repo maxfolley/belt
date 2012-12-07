@@ -175,7 +175,7 @@
     };
 
     /*
-     * Begin private utilities */
+     * Begin internal utilities */
     function convertProp(str) {
         var i, matches = str.match(/\b-\w/g), len = matches.length;
         if (!len) return str;
