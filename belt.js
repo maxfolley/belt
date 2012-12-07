@@ -4,17 +4,27 @@
 (function () {
     "use strict";
 
-    // Belt's two global vars, bound to window last
+    // Belt's two global vars, to be bound to window
     var belt = {},
-        beltup = function (obj, source) {
-        if (!exists(obj) || !exists(source)) return;
-        var prop;
-        for (prop in source) {
-            if (Object.prototype.hasOwnProperty.call(obj, prop)) continue;
-            obj[prop] = source[prop];
-        }
-        return obj;
-    };
+        // beltup expects an optional array of arguments
+        // ex: beltup(o, belt.cache); or... beltup(o, [belt.cache, belt.events]);
+        beltup = function (obj) {
+            if (!exists(obj)) return;
+            var prop, source = Array.prototype.slice.call(arguments, 1)[[0]];
+            if (exists(source)) {
+                belt.each(source, function (el, index) {
+                    if (Object.prototype.toString.call(source) !== "[object Array]") {
+                        el = source; 
+                    }
+                    for (prop in el) {
+                        // Avoid overwriting existing properties
+                        if (Object.prototype.hasOwnProperty.call(obj, prop)) continue;
+                        obj[prop] = el[prop];
+                    }
+                });
+            }
+            return obj;
+        };
 
     belt.each = function (obj, iterator, context) {
         if (!exists(obj)) return; 
