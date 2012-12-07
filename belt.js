@@ -125,7 +125,7 @@
             if (!(calls = this._callbacks)) return this;
             all = calls.all;
             events = events.split(/\s+/);
-            rest = slice.call(arguments, 1);
+            rest = Array.prototype.slice.call(arguments, 1);
             while (event = events.shift()) {
                 if (node = calls[event]) {
                     tail = node.tail;
