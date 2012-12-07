@@ -177,7 +177,9 @@
     /*
      * Begin internal utilities */
     function convertProp(str) {
-        var i, matches = str.match(/\b-\w/g), len = matches.length;
+        var i, 
+            matches = str.match(/\b-\w/g), 
+            len = exists(matches) ? matches.length : false;
         if (!len) return str;
         for (i = 0; i < len; i += 1) {
             str = str.replace(matches[i], matches[i][1].toUpperCase());

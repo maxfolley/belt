@@ -1,14 +1,14 @@
 Belt
 ====
 
-A no-dependency tool belt.
+A JavaScript Object package manager and toolbelt.
 
 Usage
 -----
 
-Belt exposes to variables to the global namespace - `belt` and `beltup`.
+Belt exposes two variables to the global namespace - `belt` and `beltup`.
 
-`belt` consists or utility functions, as well as objects containing related functionality. You can 'beltup' one of your own objects with the `beltup` function.
+`belt` consists of utility functions, as well as objects containing related functionality - or 'packages'. You can 'beltup' one of your own objects with a package by using the `beltup` function.
 
 ### Using `beltup`
 
