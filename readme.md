@@ -1,7 +1,7 @@
 Belt
 ====
 
-A JavaScript Object package manager and toolbelt.
+A JavaScript Object package manager and toolbelt. Belt is influenced by and borrowed from [Underscore](http://underscorejs.org/) and [Backbone](http://backbonejs.org/).
 
 Usage
 -----
