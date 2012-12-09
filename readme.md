@@ -14,3 +14,11 @@ Belt exposes two variables to the global namespace - `belt` and `beltup`.
 
     var selector = document.querySelector(".my-selector");
     selector = beltup(selector, [belt.cache, belt.events, belt.css]);
+
+TODO
+----
+
+- belt.events, use native addEventListener on DOM elements
+- belt.dom
+  - addClass
+  - removeClass

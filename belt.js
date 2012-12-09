@@ -78,6 +78,15 @@
         }
     };
 
+    belt.dom = {
+        addClass: function (str) {
+            
+        },
+        removeClass: function (str) {
+
+        }
+    };
+
     belt.events = {
         on: function (events, callback, context) {
             var calls, event, list, node, tail;
